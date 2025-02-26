@@ -114,10 +114,10 @@ export const skills: Skill[] = [
     { id: generateHash(), name: Technologies.DOCKER, subName: 'Docker', experience: '01/01/2019', image: SkillImage.DOCKER },
 ];
 
-const skillMap = new Map(skills.map(skill => [skill.name, skill]));
+const skillMap = new Map(skills.map(skill => [skill.name, {...skill, size: 28}]));
 
 export const jobs: Skill[] = [
-    { id: generateHash(), name: Jobs.SICOOB, complement: Jobs.ACT_DIGITAL, subName: 'JE', experience: '01/01/2019', image: JobImage.ACT_DIGITAL },
+    { id: generateHash(), name: Jobs.SICOOB, complement: Jobs.ACT_DIGITAL, subName: 'JE', experience: '01/01/2019', image: JobImage.SICOOB },
     { id: generateHash(), name: Jobs.ILPFARM, subName: 'JE', experience: '01/01/2019', image: JobImage.ILPFARM },
     { id: generateHash(), name: Jobs.BANCO_DO_BRASIL, complement: Jobs.CAST_GROUP, subName: 'JE', experience: '01/01/2019', image: JobImage.BANCO_DO_BRASIL },
     { id: generateHash(), name: Jobs.NOVA_CASA_DISTRIBUIDORA, subName: 'JE', experience: '01/01/2019', image: JobImage.NOVA_CASA },

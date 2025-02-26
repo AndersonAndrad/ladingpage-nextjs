@@ -7,6 +7,7 @@ export interface Skill {
     complement?: string;
     experience?: string;
     image: string;
+    size?: number;
 }
 
 interface SkillProps {
@@ -57,11 +58,13 @@ export function SkillComponent({skill}: SkillProps) {
     )
 }
 
-export function SkillImage({skill}: SkillProps) {
+export function SkillImage({ skill }: SkillProps) {
+    const size: number = skill?.size ?? 57;
+
     return (
-        <Avatar className="max-w-[57px] max-h-[57px] w-full h-full">
+        <Avatar style={{ width: size, height: size, maxWidth: size, maxHeight: size }}>
             <AvatarImage src={skill?.image} className="aspect-auto" />
             <AvatarFallback>{skill?.subName ?? ''}</AvatarFallback>
         </Avatar>
-    )
+    );
 }
